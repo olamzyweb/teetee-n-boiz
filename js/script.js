@@ -68,3 +68,15 @@ document.addEventListener("DOMContentLoaded", function () {
     prevButton.style.opacity = '0.5';
   });
   
+/* Add this to your existing JavaScript or create a new script.js file */
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.querySelector('.navbar');
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+});
