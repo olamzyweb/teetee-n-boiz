@@ -66,7 +66,7 @@ h1, h2, h3 {
 
 /* Hero */
 #hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/ricebg.jpg') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/ricebg.jpg') center/cover no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -74,6 +74,18 @@ h1, h2, h3 {
   color: white;
   text-align: center;
   position: relative;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .hero-overlay {
@@ -92,6 +104,26 @@ h1, h2, h3 {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+}
+
+/* Add a mobile-specific background image */
+@media (max-width: 768px) {
+  #hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/ricebg.jpg') center/cover no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+
+/* Optimize image rendering for different devices */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  #hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/ricebg.jpg');
+    background-size: cover;
+  }
 }
 
 /* About */
@@ -918,18 +950,7 @@ footer a:hover {
   }
 }
 
-/* Add this to your existing JavaScript or create a new script.js file */
-document.addEventListener('DOMContentLoaded', function() {
-  const navbar = document.querySelector('.navbar');
-  
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-});
+
 
 /* Call to Action Styles */
 .hero-buttons {
