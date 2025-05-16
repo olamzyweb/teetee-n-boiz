@@ -11,6 +11,6 @@ A modern and responsive website for a professional catering business, designed t
 - Contact form and WhatsApp integration
 - Custom request form for events
 - SEO-friendly structure
-- Clean and modern UI using HTML, CSS, and JavaScript (or your frontend framework if used)
+- Clean and modern UI using HTML, CSS, and JavaScript
 
 
